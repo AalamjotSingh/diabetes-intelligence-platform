@@ -96,6 +96,101 @@ The platform follows a flow from raw healthcare data to provider-facing decision
 
 This architecture is intended to show that the project is not just a standalone data analysis notebook. It is structured like a small healthcare analytics system, with clear separation between ingestion, validation, transformation, modeling, reporting, and decision support.
 
+## System Development Principles
 
+This project is designed using core systems development principles so that the analytics workflow is reliable, maintainable, scalable, and useful for healthcare stakeholders. The goal is to demonstrate not only data analysis ability, but also the ability to think like a systems developer building a structured information system.
 
+### Reliability
+
+Reliability is addressed through validation checks before analysis, modeling, or reporting. The system is designed to identify poor-quality records before they affect downstream outputs.
+
+Reliability features include:
+
+* Missing value detection
+* Duplicate record detection
+* Invalid clinical range checks
+* Schema consistency checks
+* Data type validation
+* Outlier detection
+* Data profiling summaries
+
+These checks help ensure that dashboards, SQL outputs, and model results are based on clean and trustworthy data.
+
+---
+
+### Scalability
+
+The architecture separates the project into independent layers such as ingestion, validation, transformation, analytics, modeling, reporting, and decision support. This makes it easier to add new datasets, new models, larger data volumes, or additional dashboard views in the future.
+
+Scalability features include:
+
+* Modular project structure
+* Separate raw and processed data folders
+* Reusable Python scripts
+* Reusable SQL queries
+* Dashboard-ready aggregate tables
+* Future support for cloud deployment or API integration
+
+---
+
+### Availability
+
+The system is designed so that insights are accessible through reports, dashboards, exports, and summary files rather than only inside a notebook. This makes the outputs more usable for non-technical stakeholders.
+
+Availability features include:
+
+* Dashboard-ready outputs
+* CSV or Excel exports
+* Executive summaries
+* Provider-facing reports
+* Repeatable reporting workflows
+
+The goal is to make insights available to healthcare teams without requiring them to manually run Python code.
+
+---
+
+### Maintainability
+
+Maintainability is supported through clear project organization, documentation, reusable code, and version control. Each part of the system has a defined responsibility so the project can be extended or modified without rewriting the entire pipeline.
+
+Maintainability features include:
+
+* Organized repository structure
+* Clearly named scripts and notebooks
+* Documented assumptions
+* Data dictionary
+* Validation rules
+* Version control through Git and GitHub
+
+---
+
+### CRUD Data Lifecycle
+
+The project follows a CRUD-style healthcare data lifecycle:
+
+| CRUD Operation    | Project Example                                        |
+| ----------------- | ------------------------------------------------------ |
+| Create            | Ingest raw patient-level diabetes records              |
+| Read              | Query and analyze cleaned healthcare data              |
+| Update            | Clean, validate, transform, and engineer new features  |
+| Delete or Archive | Remove, flag, or exclude duplicate and invalid records |
+
+This shows how patient data can move through a structured information system before becoming dashboard-ready or model-ready.
+
+---
+
+### Data Governance
+
+Because healthcare analytics involves sensitive and high-impact information, the project includes governance considerations around data quality, documentation, privacy, assumptions, and ethical limits.
+
+Data governance features include:
+
+* Data dictionary
+* Documented validation rules
+* Clear feature definitions
+* Model limitations
+* Privacy-aware design
+* Clinical decision-support boundaries
+
+The system is designed for decision support only. It does not replace clinical judgment or provide medical treatment instructions.
 
