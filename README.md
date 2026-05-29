@@ -30,5 +30,14 @@
 * [Skills Demonstrated](#skills-demonstrated)
 * [Resume Summary](#resume-summary)
 
+
+#project-overview
+The **Diabetes Intelligence Platform** is a systems-driven healthcare analytics project designed to transform patient-level diabetes data into reliable, explainable, and actionable insights for healthcare providers and administrative decision-makers.
+
+This project is built from a **systems development perspective**, not only as a machine learning notebook. It demonstrates how healthcare data can move through a structured pipeline involving data ingestion, validation, transformation, exploratory data analysis, SQL analytics, predictive modeling, automated reporting, dashboards, and provider-facing decision support.
+
+The goal is to simulate how a healthcare organization could use analytics infrastructure to improve diabetes risk visibility, reporting reliability, patient segmentation, and care-planning support.
+
+
 Diabetes Deletus – An end‑to‑end, open‑source analytics toolkit that reproduces a patient diabetes study: prevalence &amp; resource‑use reporting, risk‑prediction (logistic‑reg + Random Forest), data‑driven caloric‑glycemic recommendations, and interactive Power BI/Streamlit dashboards (all on synthetic data).
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/b056623b-a29d-4652-919f-4f39333fd009" />
