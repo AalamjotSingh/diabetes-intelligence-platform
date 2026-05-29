@@ -248,3 +248,49 @@ diabetes-intelligence-platform/
 
 This structure is designed to show that the project follows software engineering and systems development practices rather than existing only as a single notebook.
 
+
+## Dataset
+
+This project is designed to work with structured diabetes datasets containing patient-level clinical, demographic, and lifestyle indicators.
+
+The initial version of the project will use a public diabetes dataset suitable for exploratory analysis, classification, patient segmentation, and dashboard reporting.
+
+Example dataset fields include:
+
+| Field                 | Description                           |
+| --------------------- | ------------------------------------- |
+| `gender`              | Patient gender                        |
+| `age`                 | Patient age                           |
+| `hypertension`        | Whether the patient has hypertension  |
+| `heart_disease`       | Whether the patient has heart disease |
+| `smoking_history`     | Smoking history category              |
+| `bmi`                 | Body Mass Index                       |
+| `HbA1c_level`         | HbA1c blood sugar control indicator   |
+| `blood_glucose_level` | Blood glucose measurement             |
+| `diabetes`            | Diabetes status or outcome label      |
+
+### Dataset Use in the Pipeline
+
+The dataset will be used to support:
+
+* Diabetes prevalence analysis
+* Clinical risk factor exploration
+* Cohort-level reporting
+* SQL-based summaries
+* Classification modeling
+* Patient segmentation
+* Dashboard-ready insights
+
+### Future Data Extensions
+
+Future versions may integrate additional healthcare data sources such as:
+
+* Continuous glucose monitoring data
+* Medication adherence data
+* Diet and nutrition logs
+* Appointment history
+* Healthcare resource utilization data
+* Genomic or biomarker data, if available
+
+The current project will avoid making clinical claims beyond what the dataset supports. Any provider-facing recommendations are treated as decision-support indicators, not medical instructions.
+
