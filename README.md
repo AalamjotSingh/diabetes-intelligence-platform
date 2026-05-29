@@ -41,3 +41,13 @@ The goal is to simulate how a healthcare organization could use analytics infras
 
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/b056623b-a29d-4652-919f-4f39333fd009" />
+
+## Business Problem
+
+Healthcare organizations manage large volumes of clinical, demographic, and operational data across multiple systems. Without a structured analytics pipeline, this data can remain fragmented, inconsistent, and difficult to use for clinical or administrative decision-making.
+
+Diabetes management depends on timely access to key indicators such as HbA1c levels, blood glucose levels, BMI, age, hypertension status, heart disease status, smoking history, and patient risk profiles.
+
+This project focuses on converting raw patient-level diabetes data into structured insights that can help healthcare teams identify higher-risk patient groups, prioritize follow-up, improve reporting reliability, and support evidence-based planning.
+
+The business problem is not only predicting whether a patient has diabetes. The larger challenge is building a repeatable information system that can validate data, generate reliable analytics, support stakeholder reporting, and translate clinical risk indicators into provider-facing insights.
