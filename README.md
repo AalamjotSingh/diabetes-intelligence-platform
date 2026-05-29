@@ -194,3 +194,57 @@ Data governance features include:
 
 The system is designed for decision support only. It does not replace clinical judgment or provide medical treatment instructions.
 
+## Planned Repository Structure
+
+The repository is organized to separate documentation, raw data, processed data, notebooks, source code, SQL queries, reports, and visual assets. This structure makes the project easier to understand, maintain, and extend.
+
+```text
+diabetes-intelligence-platform/
+│
+├── README.md
+├── requirements.txt
+│
+├── assets/
+│   ├── architecture.png
+│   ├── dashboard_mockup.png
+│   └── pipeline_flow.png
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+│   └── 01_diabetes_analytics_pipeline.ipynb
+│
+├── src/
+│   ├── data_ingestion.py
+│   ├── data_validation.py
+│   ├── feature_engineering.py
+│   ├── modeling.py
+│   └── visualization.py
+│
+├── sql/
+│   ├── diabetes_prevalence.sql
+│   ├── high_risk_patients.sql
+│   └── provider_dashboard_queries.sql
+│
+└── reports/
+    ├── figures/
+    ├── executive_summary.md
+    └── data_dictionary.md
+```
+
+### Folder Purpose
+
+| Folder            | Purpose                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------ |
+| `assets/`         | Stores architecture diagrams, dashboard mockups, and visual project assets                                   |
+| `data/raw/`       | Stores the original dataset before cleaning or transformation                                                |
+| `data/processed/` | Stores cleaned and analysis-ready datasets                                                                   |
+| `notebooks/`      | Contains the main exploratory analysis and modeling notebook                                                 |
+| `src/`            | Contains reusable Python modules for ingestion, validation, feature engineering, modeling, and visualization |
+| `sql/`            | Contains SQL queries for prevalence analysis, high-risk patient identification, and dashboard reporting      |
+| `reports/`        | Stores final figures, summaries, data dictionaries, and executive-style documentation                        |
+
+This structure is designed to show that the project follows software engineering and systems development practices rather than existing only as a single notebook.
+
