@@ -31,7 +31,7 @@
 * [Resume Summary](#resume-summary)
 
 
-#project-overview
+## Project Overview
 The **Diabetes Intelligence Platform** is a systems-driven healthcare analytics project designed to transform patient-level diabetes data into reliable, explainable, and actionable insights for healthcare providers and administrative decision-makers.
 
 This project is built from a **systems development perspective**, not only as a machine learning notebook. It demonstrates how healthcare data can move through a structured pipeline involving data ingestion, validation, transformation, exploratory data analysis, SQL analytics, predictive modeling, automated reporting, dashboards, and provider-facing decision support.
