@@ -30,6 +30,13 @@
 * [Skills Demonstrated](#skills-demonstrated)
 * [Resume Summary](#resume-summary)
 
+## Confidentiality and NDA Disclaimer
+
+This project is an independently created portfolio demonstration inspired by general healthcare analytics and reporting problems. I have worked on similar healthcare analytics concepts in a prior Punjab Health-related project, but this repository does not disclose, reproduce, or rely on any confidential information, proprietary workflows, internal datasets, patient records, source code, reports, dashboards, or restricted documentation from that work.
+
+All data used in this repository is public or synthetic. The architecture, code, visualizations, models, and documentation were created independently to demonstrate technical capability in a privacy-safe and NDA-compliant manner.
+
+This project is not a reproduction of any internal system. It is a generalized demonstration of healthcare analytics, data validation, reporting automation, machine learning, and provider-facing decision-support concepts.
 
 ## Project Overview
 The **Diabetes Intelligence Platform** is a systems-driven healthcare analytics project designed to transform patient-level diabetes data into reliable, explainable, and actionable insights for healthcare providers and administrative decision-makers.
