@@ -276,7 +276,36 @@ Example dataset fields include:
 | `blood_glucose_level` | Blood glucose measurement             |
 | `diabetes`            | Diabetes status or outcome label      |
 
+## Synthetic Dataset Generation
+## Executive Summary
+## Key Findings
+## Exploratory Data Analysis Results
+## Clinical Risk Indicators
+## Event Log Analysis
+## Provider-Facing Insights
+## Dashboard and Reporting Outputs
+## Technical Implementation
+
 ### Dataset Use in the Pipeline
+
+## Synthetic Dataset Generation
+
+This project includes a synthetic diabetes dataset generator designed for portfolio, testing, analytics, dashboarding, and systems-development demonstration purposes.
+
+The generator creates two main datasets:
+
+| Dataset | Description |
+|---|---|
+| `patients_profile.csv` | Wide patient-level dataset containing demographics, clinical indicators, lifestyle variables, body composition fields, diabetes labels, treatment fields, and administrative attributes |
+| `insulin_glucose_log.csv` | Long-format event log containing insulin doses, glucose readings, meal events, exercise events, hypoglycemic symptoms, and special events |
+
+The patient profile dataset includes core diabetes analytics fields such as age, gender, BMI, hypertension, heart disease, smoking history, HbA1c level, blood glucose level, diabetes status, FFMI availability, and insulin use.
+
+Additional synthetic fields were included to simulate a more realistic healthcare analytics environment, including lifestyle indicators, comorbidities, lab values, treatment information, insurance status, education level, and follow-up duration.
+
+The event log follows a coded structure with date, time, code, value, and code description fields. This allows the project to demonstrate both patient-level analytics and time-based operational event analysis.
+
+All generated data is synthetic and does not represent real patients. The dataset is intended only for software-development, analytics, dashboarding, and portfolio demonstration purposes.
 
 The dataset will be used to support:
 
