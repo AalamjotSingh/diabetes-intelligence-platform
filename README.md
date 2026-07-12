@@ -102,15 +102,6 @@ This project is designed using core systems development principles so that the a
 
 Reliability is addressed through validation checks before analysis, modeling, or reporting. The system is designed to identify poor-quality records before they affect downstream outputs.
 
-Reliability features include:
-
-* Missing value detection
-* Duplicate record detection
-* Invalid clinical range checks
-* Schema consistency checks
-* Data type validation
-* Outlier detection
-* Data profiling summaries
 
 These checks help ensure that dashboards, SQL outputs, and model results are based on clean and trustworthy data.
 
@@ -120,28 +111,12 @@ These checks help ensure that dashboards, SQL outputs, and model results are bas
 
 The architecture separates the project into independent layers such as ingestion, validation, transformation, analytics, modeling, reporting, and decision support. This makes it easier to add new datasets, new models, larger data volumes, or additional dashboard views in the future.
 
-Scalability features include:
-
-* Modular project structure
-* Separate raw and processed data folders
-* Reusable Python scripts
-* Reusable SQL queries
-* Dashboard-ready aggregate tables
-* Future support for cloud deployment or API integration
 
 ---
 
 ### Availability
 
 The system is designed so that insights are accessible through reports, dashboards, exports, and summary files rather than only inside a notebook. This makes the outputs more usable for non-technical stakeholders.
-
-Availability features include:
-
-* Dashboard-ready outputs
-* CSV or Excel exports
-* Executive summaries
-* Provider-facing reports
-* Repeatable reporting workflows
 
 The goal is to make insights available to healthcare teams without requiring them to manually run Python code.
 
@@ -150,15 +125,6 @@ The goal is to make insights available to healthcare teams without requiring the
 ### Maintainability
 
 Maintainability is supported through clear project organization, documentation, reusable code, and version control. Each part of the system has a defined responsibility so the project can be extended or modified without rewriting the entire pipeline.
-
-Maintainability features include:
-
-* Organized repository structure
-* Clearly named scripts and notebooks
-* Documented assumptions
-* Data dictionary
-* Validation rules
-* Version control through Git and GitHub
 
 ---
 
