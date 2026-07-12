@@ -233,15 +233,6 @@ Example dataset fields include:
 | `blood_glucose_level` | Blood glucose measurement             |
 | `diabetes`            | Diabetes status or outcome label      |
 
-## Synthetic Dataset Generation
-## Executive Summary
-## Key Findings
-## Exploratory Data Analysis Results
-## Clinical Risk Indicators
-## Event Log Analysis
-## Provider-Facing Insights
-## Dashboard and Reporting Outputs
-## Technical Implementation
 
 ### Dataset Use in the Pipeline
 ## Dataset Use in the Pipeline
