@@ -60,16 +60,12 @@ The main objective of this project is to design a healthcare analytics platform 
 
 This project aims to:
 
-* Build an end-to-end diabetes analytics pipeline using Python and SQL
-* Ingest and organize structured patient-level healthcare data
-* Validate data quality through missing value checks, duplicate detection, schema checks, and clinical range validation
-* Transform raw data into analysis-ready features such as age groups, BMI categories, HbA1c bands, glucose bands, and risk indicators
-* Perform exploratory data analysis to identify diabetes prevalence patterns and clinical risk factors
-* Develop machine learning models to classify diabetes risk using interpretable clinical and demographic features
-* Segment patients into low, moderate, and high-risk groups using clustering techniques
-* Create dashboard-ready outputs, SQL summaries, and provider-facing reports
-* Apply systems development principles including reliability, scalability, availability, maintainability, and data governance
-* Present the final project as a portfolio-ready healthcare analytics and clinical decision-support system
+- Build an end-to-end diabetes analytics pipeline using Python and SQL
+- Validate patient-level healthcare data through schema, missing value, duplicate, and clinical range checks
+- Perform exploratory analysis to identify diabetes prevalence patterns and clinical risk indicators
+- Generate dashboard-ready summaries and provider-facing reports
+- Develop classification and segmentation workflows for diabetes risk analysis
+- Apply systems development principles including reliability, scalability, maintainability, and data governance
 
 ## System Architecture
 
