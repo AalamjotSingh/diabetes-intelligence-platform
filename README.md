@@ -1,29 +1,30 @@
 ## Table of Contents
 
+* [Confidentiality and NDA Disclaimer](#confidentiality-and-nda-disclaimer)
 * [Project Overview](#project-overview)
 * [Business Problem](#business-problem)
 * [Project Objectives](#project-objectives)
 * [System Architecture](#system-architecture)
 * [System Development Principles](#system-development-principles)
-
   * [Reliability](#reliability)
   * [Scalability](#scalability)
   * [Availability](#availability)
   * [Maintainability](#maintainability)
+  * [CRUD Data Lifecycle](#crud-data-lifecycle)
   * [Data Governance](#data-governance)
-* [Patient Segmentation](#patient-segmentation)
+* [Planned Repository Structure](#planned-repository-structure)
+* [Dataset](#dataset)
+* [Dataset Use in the Pipeline](#dataset-use-in-the-pipeline)
+* [Synthetic Dataset Generation](#synthetic-dataset-generation)
+* [Executive Summary](#executive-summary)
+* [Key Findings](#key-findings)
+* [Exploratory Data Analysis Results](#exploratory-data-analysis-results)
+* [Clinical Risk Indicators](#clinical-risk-indicators)
+* [Event Log Analysis](#event-log-analysis)
 * [Provider-Facing Insights](#provider-facing-insights)
-* [Dashboard Preview](#dashboard-preview)
-* [Success Metrics](#success-metrics)
-
-  * [Technical Metrics](#technical-metrics)
-  * [Healthcare Analytics Metrics](#healthcare-analytics-metrics)
-* [Current Project Status](#current-project-status)
-* [Roadmap](#roadmap)
-* [Limitations](#limitations)
-* [Future Improvements](#future-improvements)
-* [Skills Demonstrated](#skills-demonstrated)
-* [Resume Summary](#resume-summary)
+* [Reporting Outputs](#reporting-outputs)
+* [Technical Implementation](#technical-implementation)
+* [Future Data Extensions](#future-data-extensions)
 
 ## Confidentiality and NDA Disclaimer
 
@@ -36,10 +37,9 @@ This project is not a reproduction of any internal system. It is a generalized d
 ## Project Overview
 The **Diabetes Intelligence Platform** is a systems-driven healthcare analytics project designed to transform patient-level diabetes data into reliable, explainable, and actionable insights for healthcare providers and administrative decision-makers.
 
-This project is built from a **systems development perspective**, not only as a machine learning notebook. It demonstrates how healthcare data can move through a structured pipeline involving data ingestion, validation, transformation, exploratory data analysis, SQL analytics, predictive modeling, automated reporting, dashboards, and provider-facing decision support.
+This project is built from a **systems development perspective**, not only as a machine learning notebook. It demonstrates how healthcare data can move through a structured pipeline involving data ingestion, validation, transformation, exploratory data analysis, SQL analytics, predictive modeling, automated reporting, visual reports and provider-facing decision support.
 
 The goal is to simulate how a healthcare organization could use analytics infrastructure to improve diabetes risk visibility, reporting reliability, patient segmentation, and care-planning support.
-
 
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/b056623b-a29d-4652-919f-4f39333fd009" />
@@ -63,13 +63,13 @@ This project aims to:
 - Build an end-to-end diabetes analytics pipeline using Python and SQL
 - Validate patient-level healthcare data through schema, missing value, duplicate, and clinical range checks
 - Perform exploratory analysis to identify diabetes prevalence patterns and clinical risk indicators
-- Generate dashboard-ready summaries and provider-facing reports
+- Generate reporting-ready summaries and provider-facing reports
 - Develop classification and segmentation workflows for diabetes risk analysis
 - Apply systems development principles including reliability, scalability, maintainability, and data governance
 
 ## System Architecture
 
-The Diabetes Intelligence Platform is designed as a layered healthcare analytics architecture. Each layer has a specific responsibility, allowing the system to remain modular, maintainable, and easier to extend as new datasets, models, dashboards, or reporting requirements are added.
+The Diabetes Intelligence Platform is designed as a layered healthcare analytics architecture. Each layer has a specific responsibility, allowing the system to remain modular, maintainable, and easier to extend as new datasets, models, reports, visualizations, or reporting requirements are added.
 
 The platform follows a flow from raw healthcare data to provider-facing decision support:
 
@@ -78,7 +78,7 @@ The platform follows a flow from raw healthcare data to provider-facing decision
 3. Cleaned data is transformed into analysis-ready features.
 4. Exploratory analysis and SQL analytics generate cohort-level insights.
 5. Machine learning models classify diabetes risk and identify important predictors.
-6. Reporting and dashboard layers convert outputs into stakeholder-facing views.
+6. Reporting layers convert outputs into stakeholder-facing views.
 7. Provider-facing summaries translate analytics into practical decision-support insights.
 
 | Layer                                           | Purpose                                                                                                           |
@@ -87,9 +87,9 @@ The platform follows a flow from raw healthcare data to provider-facing decision
 | Layer 2: Data Quality and Validation            | Detect missing values, duplicate records, invalid clinical ranges, outliers, and schema issues                    |
 | Layer 3: Transformation and Feature Engineering | Create age groups, BMI categories, HbA1c bands, glucose bands, risk indicators, and clinical flags                |
 | Layer 4A: Exploratory Data Analysis             | Analyze prevalence, distributions, correlations, cohort trends, and clinical risk patterns                        |
-| Layer 4B: SQL Analytics                         | Build repeatable cohort queries, KPI summaries, reporting views, and dashboard-ready aggregates                   |
+| Layer 4B: SQL Analytics                         | Build repeatable cohort queries, KPI summaries, reporting views, and reporting-ready aggregates                   |
 | Layer 5: Predictive Modeling and Segmentation   | Train classification models and segment patients into risk groups                                                 |
-| Layer 6: Reports and Dashboards                 | Generate automated reports, dashboard views, exports, and stakeholder-facing summaries                            |
+| Layer 6: Reports and Visualizations                 | Generate automated reports, reporting views, exports, and stakeholder-facing summaries                            |
 | Layer 7: Provider-Facing Decision Support       | Translate analytics into risk stratification, care pathway flags, patient summaries, and follow-up prioritization |
 
 This architecture is intended to show that the project is not just a standalone data analysis notebook. It is structured like a small healthcare analytics system, with clear separation between ingestion, validation, transformation, modeling, reporting, and decision support.
@@ -103,20 +103,20 @@ This project is designed using core systems development principles so that the a
 Reliability is addressed through validation checks before analysis, modeling, or reporting. The system is designed to identify poor-quality records before they affect downstream outputs.
 
 
-These checks help ensure that dashboards, SQL outputs, and model results are based on clean and trustworthy data.
+These checks help ensure that reports, SQL outputs, and model results are based on clean and trustworthy data.
 
 ---
 
 ### Scalability
 
-The architecture separates the project into independent layers such as ingestion, validation, transformation, analytics, modeling, reporting, and decision support. This makes it easier to add new datasets, new models, larger data volumes, or additional dashboard views in the future.
+The architecture separates the project into independent layers such as ingestion, validation, transformation, analytics, modeling, reporting, and decision support. This makes it easier to add new datasets, new models, larger data volumes, or additional reporting views in the future.
 
 
 ---
 
 ### Availability
 
-The system is designed so that insights are accessible through reports, dashboards, exports, and summary files rather than only inside a notebook. This makes the outputs more usable for non-technical stakeholders.
+The system is designed so that insights are accessible through reports, exports, charts, and summary files rather than only inside a notebook. This makes the outputs more usable for non-technical stakeholders.
 
 The goal is to make insights available to healthcare teams without requiring them to manually run Python code.
 
@@ -139,7 +139,7 @@ The project follows a CRUD-style healthcare data lifecycle:
 | Update            | Clean, validate, transform, and engineer new features  |
 | Delete or Archive | Remove, flag, or exclude duplicate and invalid records |
 
-This shows how patient data can move through a structured information system before becoming dashboard-ready or model-ready.
+This shows how patient data can move through a structured information system before becoming reporting-ready or model-ready.
 
 ---
 
@@ -170,7 +170,7 @@ diabetes-intelligence-platform/
 │
 ├── assets/
 │   ├── architecture.png
-│   ├── dashboard_mockup.png
+│   ├── reporting_overview.png
 │   └── pipeline_flow.png
 │
 ├── data/
@@ -190,7 +190,7 @@ diabetes-intelligence-platform/
 ├── sql/
 │   ├── diabetes_prevalence.sql
 │   ├── high_risk_patients.sql
-│   └── provider_dashboard_queries.sql
+│   └── provider_reporting_queries.sql
 │
 └── reports/
     ├── figures/
@@ -202,12 +202,12 @@ diabetes-intelligence-platform/
 
 | Folder            | Purpose                                                                                                      |
 | ----------------- | ------------------------------------------------------------------------------------------------------------ |
-| `assets/`         | Stores architecture diagrams, dashboard mockups, and visual project assets                                   |
+| `assets/`         | Stores architecture diagrams, reporting overviews, and visual project assets                                   |
 | `data/raw/`       | Stores the original dataset before cleaning or transformation                                                |
 | `data/processed/` | Stores cleaned and analysis-ready datasets                                                                   |
 | `notebooks/`      | Contains the main exploratory analysis and modeling notebook                                                 |
 | `src/`            | Contains reusable Python modules for ingestion, validation, feature engineering, modeling, and visualization |
-| `sql/`            | Contains SQL queries for prevalence analysis, high-risk patient identification, and dashboard reporting      |
+| `sql/`            | Contains SQL queries for prevalence analysis, high-risk patient identification, and reporting      |
 | `reports/`        | Stores final figures, summaries, data dictionaries, and executive-style documentation                        |
 
 This structure is designed to show that the project follows software engineering and systems development practices rather than existing only as a single notebook.
@@ -217,7 +217,7 @@ This structure is designed to show that the project follows software engineering
 
 This project is designed to work with structured diabetes datasets containing patient-level clinical, demographic, and lifestyle indicators.
 
-The initial version of the project will use a public diabetes dataset suitable for exploratory analysis, classification, patient segmentation, and dashboard reporting.
+The initial version of the project will use a public diabetes dataset suitable for exploratory analysis, classification, patient segmentation, and reporting.
 
 Example dataset fields include:
 
@@ -234,7 +234,6 @@ Example dataset fields include:
 | `diabetes`            | Diabetes status or outcome label      |
 
 
-### Dataset Use in the Pipeline
 ## Dataset Use in the Pipeline
 
 The dataset supports the full analytics pipeline from ingestion to provider-facing decision support.
@@ -245,9 +244,9 @@ The dataset supports the full analytics pipeline from ingestion to provider-faci
 | Data Validation | Check missing values, duplicate records, data types, clinical ranges, and schema consistency |
 | Feature Engineering | Create age groups, BMI categories, glycemic risk bands, comorbidity flags, and provider action categories |
 | Exploratory Data Analysis | Analyze diabetes prevalence, HbA1c patterns, glucose patterns, BMI risk, comorbidities, and event-log activity |
-| SQL Analytics | Generate cohort-level summaries and dashboard-ready reporting tables |
+| SQL Analytics | Generate cohort-level summaries and reporting-ready tables |
 | Machine Learning Preparation | Prepare features for classification, segmentation, and risk modeling |
-| Dashboard Reporting | Export charts, summary CSVs, and provider-facing tables |
+| Reporting Outputs | Export charts, summary CSVs, and provider-facing tables |
 | Decision Support | Translate patient-level indicators into follow-up priority and care pathway flags |
 
 The purpose of the dataset is to demonstrate how healthcare data can move through a structured analytics system rather than remaining as isolated CSV files or notebook outputs.
@@ -256,7 +255,7 @@ The purpose of the dataset is to demonstrate how healthcare data can move throug
 
 ## Synthetic Dataset Generation
 
-This project includes a synthetic diabetes dataset generator designed for portfolio, testing, analytics, dashboarding, and systems-development demonstration purposes.
+This project includes a synthetic diabetes dataset generator designed for portfolio, testing, analytics, analytics, reporting, and systems-development demonstration purposes.
 
 The generator creates two main datasets:
 
@@ -271,7 +270,7 @@ Additional synthetic fields were included to simulate a more realistic healthcar
 
 The event log follows a coded structure with date, time, code, value, and code description fields. This allows the project to demonstrate both patient-level analytics and time-based operational event analysis.
 
-All generated data is synthetic and does not represent real patients. The dataset is intended only for software-development, analytics, dashboarding, and portfolio demonstration purposes.
+All generated data is synthetic and does not represent real patients. The dataset is intended only for software-development, analytics, reporting, and portfolio demonstration purposes.
 
 The dataset will be used to support:
 
@@ -281,7 +280,7 @@ The dataset will be used to support:
 * SQL-based summaries
 * Classification modeling
 * Patient segmentation
-* Dashboard-ready insights
+* Reporting-ready insights
 
 ## Executive Summary
 
@@ -289,7 +288,7 @@ This project demonstrates a healthcare analytics and decision-support workflow f
 
 The system analyzes demographic, clinical, lifestyle, laboratory, treatment, and event-based indicators to identify diabetes prevalence patterns, high-risk cohorts, glycemic trends, comorbidity relationships, and provider-facing follow-up priorities.
 
-The project is designed to show more than diabetes prediction. It demonstrates how a healthcare analytics platform can transform raw patient data into reliable, validated, dashboard-ready, and decision-support-oriented information products.
+The project is designed to show more than diabetes prediction. It demonstrates how a healthcare analytics platform can transform raw patient data into reliable, validated, reporting-ready and decision-support-oriented information products.
 
 The workflow produces reusable outputs including data quality reports, cohort summaries, EDA charts, event-code summaries, processed patient datasets, and provider-facing action categories.
 
@@ -299,10 +298,10 @@ The workflow produces reusable outputs including data quality reports, cohort su
 
 | Area | Finding | Healthcare Relevance |
 |---|---|---|
-| Diabetes Prevalence | The synthetic cohort contains both diabetic and non-diabetic patients, enabling comparison across clinical and demographic groups. | Supports cohort analysis, classification modeling, and dashboard reporting. |
+| Diabetes Prevalence | The synthetic cohort contains both diabetic and non-diabetic patients, enabling comparison across clinical and demographic groups. | Supports cohort analysis, classification modeling, and reporting. |
 | Age-Based Risk | Diabetes prevalence can be analyzed across age groups to identify population-level patterns. | Supports age-based segmentation and public-health style reporting. |
 | HbA1c Patterns | HbA1c is analyzed as a major glycemic control indicator. | Supports diabetes risk classification and provider-facing summaries. |
-| Blood Glucose Patterns | Blood glucose readings are analyzed from both patient profiles and event logs. | Supports glycemic monitoring and dashboard-based reporting. |
+| Blood Glucose Patterns | Blood glucose readings are analyzed from both patient profiles and event logs. | Supports glycemic monitoring and visual reporting. |
 | BMI and Metabolic Risk | BMI categories are used to evaluate metabolic risk patterns across the synthetic cohort. | Supports metabolic risk stratification when interpreted alongside other clinical indicators. |
 | Comorbidities | Hypertension, heart disease, kidney disease, neuropathy, and retinopathy are included as comorbidity indicators. | Supports chronic disease management and follow-up prioritization. |
 | Insulin and Glucose Logs | Event-code analysis captures insulin doses, glucose readings, meal events, exercise activity, hypoglycemic symptoms, and special events. | Demonstrates time-based diabetes monitoring and operational reporting. |
@@ -338,7 +337,7 @@ HbA1c is analyzed as a key glycemic control indicator and classification feature
 
 ![Blood Glucose Distribution](reports/figures/blood_glucose_distribution.png)
 
-Blood glucose patterns are analyzed to support glycemic risk summaries and dashboard reporting.
+Blood glucose patterns are analyzed to support glycemic risk summaries and reporting.
 
 ### Diabetes by BMI Category
 
@@ -426,9 +425,9 @@ The purpose of this section is to demonstrate how analytics outputs can be trans
 
 ---
 
-## Dashboard and Reporting Outputs
+## Reporting Outputs
 
-The project generates dashboard-ready datasets, charts, and summary tables that can be used in Power BI, Tableau, Streamlit, Plotly Dash, or other reporting tools.
+The project generates reporting-ready datasets, charts, and summary tables that can be reviewed directly in the repository or integrated into future analytics applications.
 
 Generated reporting outputs include:
 
@@ -446,7 +445,7 @@ Generated reporting outputs include:
 | `provider_action_summary.csv` | Provider-facing follow-up categories |
 | `patients_with_provider_flags.csv` | Processed patient dataset with action flags |
 
-These outputs show how the project can support recurring reports, dashboard refreshes, and stakeholder-facing summaries.
+These outputs show how the project can support recurring reports, scheduled reporting workflows, and stakeholder-facing summaries.
 
 ---
 
@@ -465,21 +464,7 @@ The project was implemented using Python-based analytics workflows with a system
 | Visualization | Matplotlib charts saved to `reports/figures/` |
 | Decision Support | Provider-facing action flags and follow-up prioritization categories |
 
-The implementation is designed so that each stage of the workflow can be extended into reusable scripts, SQL queries, dashboards, or machine learning pipelines.
-
-Also update your Table of Contents with these lines:
-
-* [Dataset Use in the Pipeline](#dataset-use-in-the-pipeline)
-* [Synthetic Dataset Generation](#synthetic-dataset-generation)
-* [Executive Summary](#executive-summary)
-* [Key Findings](#key-findings)
-* [Exploratory Data Analysis Results](#exploratory-data-analysis-results)
-* [Clinical Risk Indicators](#clinical-risk-indicators)
-* [Event Log Analysis](#event-log-analysis)
-* [Dashboard and Reporting Outputs](#dashboard-and-reporting-outputs)
-* [Technical Implementation](#technical-implementation)
-
-You already have Provider-Facing Insights in the Table of Contents, so you do not need to duplicate it.
+The implementation is designed so that each stage of the workflow can be extended into reusable scripts, SQL queries, reports, applications, or machine learning pipelines.
 
 ### Future Data Extensions
 
@@ -493,6 +478,4 @@ Future versions may integrate additional healthcare data sources such as:
 * Genomic or biomarker data, if available
 
 
-
 The current project will avoid making clinical claims beyond what the dataset supports. Any provider-facing recommendations are treated as decision-support indicators, not medical instructions.
-
